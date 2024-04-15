@@ -26,7 +26,13 @@ db.on("error", function (err) {
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://mw-project-fe.vercel.app"],
+    methods: ["POST", "GET", "DELETE"],
+    credentials: true,
+  })
+);
 
 app.use("/product", product_routes);
 app.use("/user", user_routes);
