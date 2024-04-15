@@ -39,7 +39,7 @@ app.use("/user", user_routes);
 
 app.use(
   session({
-    secret: "secret",
+    secret: process.env.SECRET,
     resave: false,
     saveUninitialized: false,
     cookie: {},
