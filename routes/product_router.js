@@ -36,7 +36,7 @@ router.route("/add").post(verifyToken, async (req, res) => {
   await check("category", "Category is required").notEmpty().run(req);
   await check("rating", "Rating is required").notEmpty().run(req);
   await check("quantity", "Quantity is required").notEmpty().run(req);
-  await check("image", "Image is required").notEmpty().run(req);
+  // await check("image", "Image is required").notEmpty().run(req);
 
   const errors = validationResult(req);
 
